@@ -5,7 +5,8 @@
 
 ## To Do
 - Create DB for easier sorting when we have more images
-- Get it running on Heroku and saving on AWS
+- ~~Get it running on Heroku and saving on AWS~~
+- Create image array from S3 bucket
 - Create filtering function for date range
 - ~~Gulp and SCSS/JS setup~~
 - Crop junk off top of images

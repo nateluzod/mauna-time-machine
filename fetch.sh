@@ -1,13 +1,16 @@
 #!/bin/bash
 
+# Set the filename as unix timestamp
 NF=$(date +%s)
 
+# Get the file and copy it to tmp
 wget http://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/northcam.jpg && mv northcam.jpg tmp/$NF.jpg
 
+# Run everything from tmp directory from here
 cd tmp/
 
+# Push the file to S3
 file="$NF.jpg"
-
 key_id=$AWS_ACCESS_KEY_ID
 key_secret=$AWS_SECRET_KEY
 bucket="mauna-time-machine"
@@ -23,4 +26,5 @@ curl -T $file http://$bucket.s3.amazonaws.com/$path \
     -H "Content-Type: $content_type" \
     -H "Content-MD5: $md5"
 
+# Remove the file so we don't clutter up the server
 rm -rf $NF.jpg
