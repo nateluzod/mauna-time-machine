@@ -1,20 +1,15 @@
 {% extends 'layout.twig' %}
 
 {% block content %}
-  <div class="background"></div>
-    <div class="cap__wrap">
-      {% for image in images %}
-        <div class="cap__inner">
-          <img width="800" height="450" class="cap" src="{{ image }}">
-          <h3 class="cap__date">{{ img_name_to_date(image) }}</h3>
-        </div>
-      {% endfor %}
+  {% for image in images %}
+    <div class="frame" style="background-image: url({{ image }});">
+      <datetime class="frame__date">{{ img_name_to_date(image) }}</datetime>
     </div>
-  </div>
+  {% endfor %}
 {% endblock %}
 {% block footer_scripts %}
   <script type="text/javascript">
-    var images = document.getElementsByClassName('cap__inner');
+    var images = document.getElementsByClassName('frame');
 
     var i = 0, l = images.length;
     (function iterator() {

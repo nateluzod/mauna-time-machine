@@ -8,6 +8,7 @@
 - [] Get it running on Heroku and saving on AWS
 - [] Create filtering function for date range
 - [] Gulp and SCSS/JS setup
+- [] Crop junk off top of images
 
 ## Notes
 * Cron should be set for every 15 minutes since that's how often the feed is updated
