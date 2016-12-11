@@ -1,0 +1,24 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+  <h1>Name: {{ name }}</h1>
+{% endblock %}
+{% block footer_scripts %}
+<script type="text/javascript">
+  var images = document.getElementsByClassName('cap__inner');
+
+  var i = 0, l = images.length;
+  (function iterator() {
+    images[i].style.opacity = 1;
+
+    if(i > 0){
+      var previous = i - 1;
+      images[previous].style.opacity = 0;
+    }
+
+    if(++i<l) {
+        setTimeout(iterator, 100);
+    }
+  })();
+</script>
+{% endblock %}
