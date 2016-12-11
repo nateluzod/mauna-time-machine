@@ -1,24 +1,37 @@
 {% extends 'layout.twig' %}
 
 {% block content %}
-  <h1>Name: {{ name }}</h1>
+  <div class="background"></div>
+    <div class="cap__wrap">
+      {% for image in images %}
+        <div class="cap__inner">
+          <img
+            width="800"
+            height="450"
+            class="cap"
+            src="{{ image }}">
+          <h3>Date</h3>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}
 {% block footer_scripts %}
-<script type="text/javascript">
-  var images = document.getElementsByClassName('cap__inner');
+  <script type="text/javascript">
+    var images = document.getElementsByClassName('cap__inner');
 
-  var i = 0, l = images.length;
-  (function iterator() {
-    images[i].style.opacity = 1;
+    var i = 0, l = images.length;
+    (function iterator() {
+      images[i].style.opacity = 1;
 
-    if(i > 0){
-      var previous = i - 1;
-      images[previous].style.opacity = 0;
-    }
+      if(i > 0){
+        var previous = i - 1;
+        images[previous].style.opacity = 0;
+      }
 
-    if(++i<l) {
-        setTimeout(iterator, 100);
-    }
-  })();
-</script>
+      if(++i<l) {
+          setTimeout(iterator, 100);
+      }
+    })();
+  </script>
 {% endblock %}
