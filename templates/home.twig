@@ -5,12 +5,8 @@
     <div class="cap__wrap">
       {% for image in images %}
         <div class="cap__inner">
-          <img
-            width="800"
-            height="450"
-            class="cap"
-            src="{{ image }}">
-          <h3>Date</h3>
+          <img width="800" height="450" class="cap" src="{{ image }}">
+          <h3 class="cap__date">{{ img_name_to_date(image) }}</h3>
         </div>
       {% endfor %}
     </div>
@@ -30,7 +26,7 @@
       }
 
       if(++i<l) {
-          setTimeout(iterator, 100);
+          setTimeout(iterator, 75);
       }
     })();
   </script>

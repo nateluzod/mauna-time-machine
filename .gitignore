@@ -3,3 +3,4 @@
 /logs/*
 !/logs/README.md
 /public/img/
+/node_modules/

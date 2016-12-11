@@ -6,7 +6,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 
 $app->get('/', function ($request, $response, $images) {
-    // $images = "nate";
+
     $images = glob('../public/img/*.{jpg}', GLOB_BRACE);
     $images = str_replace('../public/', '', $images);
     return $this->view->render($response, 'home.twig', [

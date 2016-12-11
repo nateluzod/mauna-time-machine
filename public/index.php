@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('Pacific/Honolulu');
+
 require '../vendor/autoload.php';
 
 $app = new \Slim\App();

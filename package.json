@@ -1,0 +1,22 @@
+{
+  "name": "mauna-time-machine",
+  "version": "1.0.0",
+  "description": "* Retrieves images from summit camera and creates a timelapse * Yeah... that's it",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nateluzod/mauna-time-machine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nateluzod/mauna-time-machine/issues"
+  },
+  "homepage": "https://github.com/nateluzod/mauna-time-machine#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
