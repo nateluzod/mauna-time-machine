@@ -4,10 +4,11 @@
 NF=$(date +%s)
 
 # Get the file and copy it to tmp
-wget http://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/northcam.jpg && mv northcam.jpg tmp/$NF.jpg
+wget http://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/northcam.jpg && mv northcam.jpg $NF.jpg
 
 # Run everything from tmp directory from here
-cd tmp/
+# mkdir tmp
+# cd tmp
 
 # Push the file to S3
 file="$NF.jpg"
