@@ -2,5 +2,5 @@ cache/
 vendor/
 logs/*
 !/logs/README.md
-tmp/*
 node_modules/
+tmp/*
