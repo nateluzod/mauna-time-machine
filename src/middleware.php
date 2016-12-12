@@ -9,7 +9,9 @@ $container['view'] = function ($container) {
         // 'cache' => '../cache'
     ]);
 
-    // Add Slim-specific extensions
+    /**
+     * Add Slim-specific extensions
+     */
     $basePath = rtrim(
       str_replace(
         'index.php','',
@@ -17,6 +19,9 @@ $container['view'] = function ($container) {
       ), '/');
     $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
 
+    /**
+     * Get date from image name, won't need this once we're in DB
+     */
     $img_name_to_date = new Twig_SimpleFunction('img_name_to_date', function ($imgName) {
 
       $cleanedName = substr($imgName, -14, 10);
@@ -26,6 +31,17 @@ $container['view'] = function ($container) {
     });
 
     $view->getEnvironment()->addFunction($img_name_to_date);
+
+    /**
+     * For debugging
+     */
+    $var_dump = new Twig_SimpleFunction('var_dump', function ($object) {
+
+      return var_dump($object);
+
+    });
+
+    $view->getEnvironment()->addFunction($var_dump);
 
     return $view;
 };

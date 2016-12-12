@@ -2,9 +2,11 @@
 
 {% block content %}
   {% for image in images %}
-    <div class="frame" style="background-image: url({{ image }});">
+    {% set image = image.Key %}
+    <div class="frame" style="background-image: url(https://s3.amazonaws.com/mauna-time-machine/{{ image }});">
       <datetime class="frame__date">{{ img_name_to_date(image) }}</datetime>
     </div>
+
   {% endfor %}
 {% endblock %}
 {% block footer_scripts %}
