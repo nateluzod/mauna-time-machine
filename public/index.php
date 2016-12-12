@@ -1,5 +1,8 @@
 <?php
 
+// echo getenv('AWS_ACCESS_KEY_ID');
+// echo getenv('AWS_SECRET_KEY');
+
 date_default_timezone_set('Pacific/Honolulu');
 
 require '../vendor/autoload.php';

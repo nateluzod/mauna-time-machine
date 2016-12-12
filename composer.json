@@ -12,6 +12,7 @@
         "twig/twig": "^1.28",
         "slim/slim": "^3.6",
         "monolog/monolog": "^1.22",
-        "slim/twig-view": "^2.1"
+        "slim/twig-view": "^2.1",
+        "league/flysystem-aws-s3-v3": "^1.0"
     }
 }
