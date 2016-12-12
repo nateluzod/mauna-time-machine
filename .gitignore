@@ -1,7 +1,6 @@
-/cache/
-/vendor/
-/logs/*
+cache/
+vendor/
+logs/*
 !/logs/README.md
-/public/img/
-/tmp/*
-/node_modules/
+tmp/*
+node_modules/
