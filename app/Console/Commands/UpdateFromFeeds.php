@@ -111,10 +111,8 @@ class UpdateFromFeeds extends Command
     {
 
         $feeds = Feed::all();
-        $storage = storage_path();
         $stamp = time();
-        $tmpfile = "{$storage}/tmp/{$stamp}.jpg";
-        $newfile = "{$storage}/{$stamp}.jpg";
+        $tmpfile = "/tmp/{$stamp}.jpg";
         $bar = $this->output->createProgressBar(count($feeds));
 
         foreach ($feeds as $feed) {
