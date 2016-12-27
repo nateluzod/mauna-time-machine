@@ -1,7 +1,7 @@
 @extends('layouts.feeds')
 
 @section('content')
-    <ul>
+    <ul class="feed">
         @foreach ($feeds as $feed)
             <li>
                 <a href="/feed/{{ $feed->slug }}">
