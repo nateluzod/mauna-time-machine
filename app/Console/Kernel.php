@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('feed:pull --force')->everyMinute();
+        $schedule->command('feed:pull')->everyMinute();
     }
 
     /**

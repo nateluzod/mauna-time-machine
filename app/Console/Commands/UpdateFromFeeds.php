@@ -72,10 +72,10 @@ class UpdateFromFeeds extends Command
      * @param  string $tmpfile temp file we're pushing up yonder
      * @return void
      */
-    private function pushFileToStorage($newfile, $tmpfile)
+    private function pushFileToStorage($slug, $stamp, $tmpfile)
     {
         $s3 = Storage::disk('s3');
-        $s3->put($newfile, file_get_contents($tmpfile));
+        $s3->put("{$slug}/{$stamp}.jpg", file_get_contents($tmpfile));
     }
 
     /**
@@ -120,7 +120,7 @@ class UpdateFromFeeds extends Command
         foreach ($feeds as $feed) {
             if($this->urlExists($feed->location)) {
                 $this->copyFileFromSource($feed->location, $tmpfile);
-                $this->pushFileToStorage($newfile, $tmpfile);
+                $this->pushFileToStorage($feed->slug, $stamp, $tmpfile);
                 $this->createDbRecord($stamp, $feed->id);
                 $this->cleanUpTempFile($tmpfile);
             } else {
