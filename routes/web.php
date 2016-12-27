@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
+Route::get('/', 'FeedController@index');
+Route::get('/feed/{slug?}', 'FeedController@feed');
+
 Route::get('/admin', 'AdminController@index');
-Route::get('/update-feeds', 'AdminController@updateFeeds');

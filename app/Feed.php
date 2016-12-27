@@ -22,4 +22,8 @@ class Feed extends Model
             ]
         ];
     }
+
+    public function frames(){
+        return $this->hasMany(\App\Frame::class);
+    }
 }
