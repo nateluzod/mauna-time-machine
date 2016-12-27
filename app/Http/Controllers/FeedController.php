@@ -8,7 +8,7 @@ class FeedController extends Controller
 {
     public function index()
     {
-        return view("home", [
+        return view("feeds", [
             'feeds' => \App\Feed::all()
         ]);
     }

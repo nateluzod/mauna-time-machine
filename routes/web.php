@@ -15,6 +15,7 @@
 
 Auth::routes();
 
+Route::get('/home', 'FeedController@index');
 Route::get('/', 'FeedController@index');
 Route::get('/feed/{slug?}', 'FeedController@feed');
 
